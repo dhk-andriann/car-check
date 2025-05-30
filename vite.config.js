@@ -1,4 +1,5 @@
-// vite.config.js
-export default {
-    base: '/car-check/',
-};
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+    base: '/car-check/', // this must match your repo name
+});

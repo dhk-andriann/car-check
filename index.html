@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <title>Vite App</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="bg-white p-5 col-8 offset-2 shadow-lg">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="mb-4">Car Check</h2>
+                    <a href="https://limelogic.be/"><img style="width: 150px" src="/logolimelogicrempli.png"
+                                                         alt="limeLogic logo goes here"></a>
+                </div>
+                <form>
+
+                    <!-- Circonstance -->
+                    <div class="mb-3">
+                        <label class="form-label">Circonstance :</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="circonstance" id="reception"
+                                   value="Réception">
+                            <label class="form-check-label" for="reception">Réception d'un véhicule</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="circonstance" id="restitution"
+                                   value="Restitution">
+                            <label class="form-check-label" for="restitution">Restitution d'un véhicule</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Prénom -->
+                        <div class="mb-3 col-md-6">
+                            <label for="prenom" class="form-label">Prénom du chauffeur</label>
+                            <input type="text" class="form-control" id="prenom" name="prenom">
+                        </div>
+
+                        <!-- Nom -->
+                        <div class="mb-3 col-md-6">
+                            <label for="nom" class="form-label">Nom du chauffeur</label>
+                            <input type="text" class="form-control" id="nom" name="nom">
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email du travailleur <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" name="email"
+                               placeholder="email" required>
+                    </div>
+
+                    <div class="row">
+
+                        <!-- Marque -->
+                        <div class="mb-3 col-md-6">
+                            <label for="marque" class="form-label">Marque <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="marque" name="marque" required>
+                        </div>
+
+                        <!-- Modèle -->
+                        <div class="mb-3 col-md-6">
+                            <label for="modele" class="form-label">Modèle <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="modele" name="modele" required>
+                        </div>
+
+                    </div>
+
+                    <!-- Plaque -->
+                    <div class="mb-3">
+                        <label for="plaque" class="form-label">N° de plaque <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="plaque" name="plaque" required>
+                    </div>
+
+                    <div class="row">
+
+                        <!-- Date d'attribution -->
+                        <div class="mb-3 col-md-6">
+                            <label for="date_attribution" class="form-label">Date d'attribution</label>
+                            <input type="date" class="form-control" id="date_attribution" name="date_attribution"
+                                   value="2025-05-28">
+                        </div>
+
+                        <!-- Attribué par -->
+                        <div class="mb-3 col-md-6">
+                            <label for="attribue_par" class="form-label">Attribué par</label>
+                            <input type="email" class="form-control" id="attribue_par" name="attribue_par"
+                                   placeholder="email">
+                        </div>
+                    </div>
+
+
+                    <!-- Date dernier contrôle technique -->
+                    <div class="mb-5">
+                        <label for="controle_tech" class="form-label">Date dernier contrôle technique</label>
+                        <input type="date" class="form-control" id="controle_tech" name="controle_tech">
+                    </div>
+
+                    <!-- Uploads -->
+                    <div class="mb-5">
+                        <label class="form-label">Certificat d'immatriculation RECTO <span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="certificat_recto">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="certificat_recto" id="certificat_recto" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="form-label">Certificat d'immatriculation VERSO <span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="certificat_verso">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="certificat_verso" id="certificat_verso" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="form-label">Contrôle technique (si existant)</label>
+                        <div class="dropzone" data-label="controle_tech_file">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="controle_tech_file" id="controle_tech_file">
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="form-label">Photo du carnet d'entretien (dernière page)</label>
+                        <div class="dropzone" data-label="carnet_entretien">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="carnet_entretien" id="carnet_entretien">
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="form-label">Carte Carburant</label>
+                        <div class="dropzone" data-label="carte_carburant">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="carte_carburant" id="carte_carburant">
+                        </div>
+                    </div>
+
+                    <table class="table align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Métrique</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Kilométrage</td>
+                                <td><input type="number" class="form-control" name="kilometrage" placeholder="Ex: 45230"
+                                           required></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Nombre de clefs</td>
+                                <td><input type="number" class="form-control" name="nb_clefs" placeholder="Ex: 2"
+                                           required></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Code de la carte carburant</td>
+                                <td><input type="text" class="form-control" name="code_carte_carburant"
+                                           placeholder="Ex: 1234-5678-9012" required></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Niveau carburant</td>
+                                <td><input type="text" class="form-control" name="niveau_carburant"
+                                           placeholder="Ex: 3/4 plein" required></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Date de validité de l'extincteur</td>
+                                <td><input type="date" class="form-control" name="date_extincteur" required></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Lieu de stockage pneus été/hiver</td>
+                                <td><input type="text" class="form-control" name="lieu_stockage_pneus"
+                                           placeholder="Ex: Dépôt 3" required></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">N° de châssis</td>
+                                <td><input type="text" class="form-control" name="numero_chassis"
+                                           placeholder="Ex: VF1ABC12345678900" required></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">OK ?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Mode d’emploi</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="mode_emploi" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Carnet d’entretien</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="carnet_entretien" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Carte grise</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="carte_grise" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Document assurance</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="doc_assurance" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Certificat d’immatriculation</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="certificat_immatriculation" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Contrôle technique</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="controle_technique" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Certificat de conformité</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="certificat_conformite" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Extincteur</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="extincteur" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Trousse de secours</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="trousse_secours" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Roue de secours</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="roue_secours" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Kit de réparation roue</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="kit_reparation" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Triangle</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="triangle" class="form-check-input"></td>
+                            </tr>
+                            <tr>
+                                <td class="bg-secondary-subtle fw-bolder">Gilet fluo</td>
+                                <td class="border-1 d-flex justify-content-center align-items-center"><input
+                                        type="checkbox" name="gilet_fluo" class="form-check-input"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div class="mb-3">
+                        <label for="remarques" class="form-label">Remarques</label>
+                        <textarea class="form-control" id="remarques" name="remarques" rows="4"
+                                  placeholder="Ajoutez ici vos remarques..."></textarea>
+                    </div>
+
+
+                    <h5 class="mt-4">Intérieur du véhicule</h5>
+
+                    <div class="mb-3">
+                        <label for="etatInterieur" class="form-label">État intérieur</label>
+                        <select class="form-select" id="etatInterieur" name="etat_interieur" required>
+                            <option selected disabled>Veuillez sélectionner</option>
+                            <option>Bon</option>
+                            <option>Moyen</option>
+                            <option>Mauvais</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="odeurTabac" class="form-label">Odeur de tabac ?<span class="text-danger">*</span></label>
+                        <select class="form-select" id="odeurTabac" name="odeur_tabac" required>
+                            <option selected disabled>Veuillez sélectionner</option>
+                            <option>Oui</option>
+                            <option>Non</option>
+                        </select>
+                    </div>
+
+                    <div class="my-5">
+                        <label for="photo_interieur_avant" class="form-label">Photos intérieurs (Sièges avants par porte
+                            conducteur)<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="carte_carburant">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input class="form-control" type="file" name="photo_interieur_avant"
+                                   id="photo_interieur_avant" required>
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <label for="photo_interieur_arriere" class="form-label">Photos intérieurs (Sièges
+                            arrières)<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="carte_carburant">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input class="form-control" type="file" name="photo_interieur_arriere"
+                                   id="photo_interieur_arriere" required>
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <label for="photo_interieur_coffre" class="form-label">Photos intérieurs (Intérieur
+                            coffre)<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="carte_carburant">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input class="form-control" type="file" name="photo_interieur_coffre"
+                                   id="photo_interieur_coffre" required>
+                        </div>
+                    </div>
+
+
+                    <div class="my-5">
+                        <label for="photo_compteur_km" class="form-label">Photos intérieurs (Compteur km)<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="carte_carburant">
+                            <p>Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input class="form-control" type="file" name="photo_compteur_km" id="photo_compteur_km"
+                                   required>
+                        </div>
+                    </div>
+
+
+                    <h5 class="mt-5">Extérieur du véhicule</h5>
+
+                    <div class="mb-3">
+                        <label for="etatExterieur" class="form-label">État extérieur</label>
+                        <select class="form-select" id="etatExterieur" name="etat_exterieur" required>
+                            <option selected disabled>Veuillez sélectionner</option>
+                            <option>Bon</option>
+                            <option>Moyen</option>
+                            <option>Mauvais</option>
+                        </select>
+                    </div>
+
+
+                    <div class="my-5">
+                        <label for="photo_face_avant" class="form-label">Photo extérieur - Face avant<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="photo_face_avant">
+                            <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="photo_face_avant" id="photo_face_avant" required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <label for="photo_face_arriere" class="form-label">Photo extérieur - Face arrière<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="photo_face_arriere">
+                            <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="photo_face_arriere" id="photo_face_arriere" required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <label for="photo_cote_droit" class="form-label">Photo extérieur - côté droit<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="photo_cote_droit">
+                            <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="photo_cote_droit" id="photo_cote_droit" required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="my-5">
+                        <label for="photo_cote_gauche" class="form-label">Photo extérieur - côté gauche<span class="text-danger">*</span></label>
+                        <div class="dropzone" data-label="photo_cote_gauche">
+                            <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
+                            <input type="file" name="photo_cote_gauche" id="photo_cote_gauche" required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-label mt-5 mb-3">
+                        Schéma - Identification des dégats (éventuels)
+                    </div>
+
+
+                    <div class="d-flex align-items-center justify-content-between bg-light p-2 border rounded">
+                        <!-- Brush / Eraser as Radio Buttons -->
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="btn-group" role="group" aria-label="Drawing tools">
+                                <input type="radio" class="btn-check" name="tool" id="brush" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="brush" title="Brush">
+                                    <i class="bi bi-brush"></i>
+                                </label>
+
+                                <input type="radio" class="btn-check" name="tool" id="eraser" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="eraser" title="Eraser">
+                                    <i class="bi bi-eraser"></i>
+                                </label>
+                            </div>
+
+                            <!-- Color Picker -->
+                            <input type="color" id="colorPicker" class="form-control form-control-color" title="Select Color" value="#df4b26">
+
+                            <div class="d-flex align-items-center gap-2">
+                                <label for="sizePicker" class="form-label mb-0">
+                                    Taille
+                                </label>
+                                <input type="range" id="sizePicker" class="form-range" min="5" max="50" step="5" value="5" style="width: 100px;">
+                                <span id="sizeValue" class="badge bg-secondary">5</span>
+                            </div>
+
+
+                        </div>
+
+                        <button id="clearButton" class="btn btn-outline-danger" title="Clear drawing">
+                            Effacer <i class="bi bi-trash"></i>
+                        </button>
+
+
+                    </div>
+
+                    <div id="konva-container">
+
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="row text-center mt-5">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

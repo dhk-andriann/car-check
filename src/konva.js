@@ -4,9 +4,16 @@ const konvaContainer = document.querySelector('#konva-container');
 
 const stage = new Konva.Stage({
     container: 'konva-container',
-    width: konvaContainer.offsetWidth,
+    width: konvaContainer.offsetWidth, // équivalent de width: 100%
     height: 600,
 });
+
+// Rend le stage responsive en largeur
+window.addEventListener('resize', () => {
+    stage.width(konvaContainer.offsetWidth);
+    stage.draw(); // Redessine le canvas
+});
+
 
 const backgroundLayer = new Konva.Layer();
 const drawingLayer = new Konva.Layer();

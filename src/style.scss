@@ -1,0 +1,92 @@
+// First: override variables
+$primary: #84BD00;
+
+// Then: use Bootstrap with variable overrides
+@use "bootstrap/scss/bootstrap" with (
+  $primary: $primary
+);
+
+// Now: you can import fonts or write styles
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+// Your custom styles
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dropzone {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #6c757d;
+    border-radius: 0.5rem;
+    color: #6c757d;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.dragover {
+        background-color: #e9ecef;
+    }
+
+    input {
+        display: none;
+    }
+
+    p {
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.form-label {
+    font-weight: bold;
+    text-wrap: wrap;
+}
+
+#konva-container {
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.logo {
+    width: 150px;
+}
+
+.range-label {
+    // Add styles here if needed
+}
+
+// Responsive styles
+@media (max-width: 576px) {
+    .table td input {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .table td:first-child {
+        white-space: nowrap;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    body {
+        font-size: .7rem;
+    }
+
+    // Optional: restore these if needed
+    // .main-title {
+    //   font-size: .9rem;
+    //   font-weight: bold;
+    // }
+
+    // .form-label,
+    // .dropzone p {
+    //   font-size: .8rem;
+    // }
+}

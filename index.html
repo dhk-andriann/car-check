@@ -5,13 +5,13 @@
         <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-        <title>Vite App</title>
+        <title>Car check - limeLogic</title>
     </head>
     <body>
 
         <div class="bg-white p-4 p-md-5 col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2 shadow-lg">
-            <div class="d-flex justify-content-between align-items-center">
-                <h2 class="mb-4">Car Check</h2>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Car Check</h2>
                 <a href="https://limelogic.be/"><img class="logo" src="/logolimelogicrempli.png"
                                                      alt="limeLogic logo goes here"></a>
             </div>
@@ -103,7 +103,8 @@
 
                 <!-- Uploads -->
                 <div class="mb-5">
-                    <label class="form-label">Certificat d'immatriculation RECTO <span class="text-danger">*</span></label>
+                    <label class="form-label">Certificat d'immatriculation RECTO <span
+                            class="text-danger">*</span></label>
                     <div class="dropzone" data-label="certificat_recto">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
                         <input type="file" name="certificat_recto" id="certificat_recto" required>
@@ -111,7 +112,8 @@
                 </div>
 
                 <div class="mb-5">
-                    <label class="form-label">Certificat d'immatriculation VERSO <span class="text-danger">*</span></label>
+                    <label class="form-label">Certificat d'immatriculation VERSO <span
+                            class="text-danger">*</span></label>
                     <div class="dropzone" data-label="certificat_verso">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
                         <input type="file" name="certificat_verso" id="certificat_verso" required>
@@ -403,9 +405,9 @@
 
                 <!--toolbar-->
 
-                <div class="d-flex flex-wrap flex-md-nowrap align-items-center justify-content-between bg-light p-2 border rounded gap-3">
-                    <!-- Outils de dessin -->
-                    <div class="d-flex flex-wrap flex-md-nowrap align-items-center gap-3 w-100">
+                <div class="d-flex align-items-center justify-content-between bg-light p-2 py-5 w-100 mb-4">
+                    <!-- Brush / Eraser as Radio Buttons -->
+                    <div class="d-flex align-items-center justify-content-lg-between gap-3 w-100 flex-wrap flex-lg-nowrap">
 
                         <!-- Brush / Eraser -->
                         <div class="btn-group" role="group" aria-label="Drawing tools">
@@ -421,22 +423,25 @@
                         </div>
 
                         <!-- Color Picker -->
-                        <input type="color" id="colorPicker" class="form-control form-control-color" title="Select Color" value="#df4b26">
+                        <input type="color" id="colorPicker" class="form-control form-control-color"
+                               title="Select Color" value="#df4b26">
 
                         <!-- Range + Label -->
-                        <div class="d-flex align-items-center gap-2 flex-wrap">
-                            <label for="sizePicker" class="form-label mb-0">Épaisseur du trait</label>
-                            <input type="range" id="sizePicker" class="form-range" min="5" max="50" step="5" value="5">
+                        <div class="d-flex align-items-center gap-4 w-100 flex-wrap flex-md-nowrap">
+                            <label for="sizePicker" class="mb-0 range-label">Épaisseur du trait</label>
+                            <input type="range" id="sizePicker" class="form-range" min="5" max="50" step="5" value="5"
+                                   style="width: 100px;">
                             <span id="sizeValue" class="badge bg-secondary">5</span>
                         </div>
+                        <div class="w-100 d-flex justify-content-lg-end">
+
+                            <button id="clearButton" class="btn btn-outline-danger" title="Clear drawing">
+                                Effacer <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+
                     </div>
 
-                    <!-- Bouton Effacer -->
-                    <div class="ms-md-auto">
-                        <button id="clearButton" class="btn btn-outline-danger" title="Clear drawing">
-                            Effacer <i class="bi bi-trash"></i>
-                        </button>
-                    </div>
                 </div>
 
                 <div id="konva-container"></div>

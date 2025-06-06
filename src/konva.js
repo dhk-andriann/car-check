@@ -2,7 +2,7 @@ import Konva from 'konva';
 
 const konvaContainer = document.querySelector('#konva-container');
 
-const stage = new Konva.Stage({
+export const stage = new Konva.Stage({
     container: 'konva-container',
     width: konvaContainer.offsetWidth,
     height: konvaContainer.offsetHeight,
@@ -67,6 +67,8 @@ imageObj.onload = () => {
     background.moveToBottom();
     backgroundLayer.draw();
 };
+
+imageObj.crossOrigin = 'anonymous'
 imageObj.src = 'pov-car-outline.png';
 
 document.getElementById('brush')?.addEventListener('change', () => {

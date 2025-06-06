@@ -9,13 +9,18 @@
     </head>
     <body>
 
-        <div class="bg-white p-4 p-md-5 col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2 shadow-lg">
+
+<!--        <div class="print-btn">-->
+<!--            <button class="btn btn-primary">Generate PDF</button>-->
+<!--        </div>-->
+
+        <div id="form-container" class="bg-white p-4 p-md-5 col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2 shadow-lg">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>Car Check</h2>
-                <a href="https://limelogic.be/"><img class="logo" src="/logolimelogicrempli.png"
+                <a target="_blank" href="https://limelogic.be/"><img class="logo" src="/logolimelogicrempli.png"
                                                      alt="limeLogic logo goes here"></a>
             </div>
-            <form>
+            <form id="car-form">
 
                 <!-- Circonstance -->
                 <div class="mb-3">
@@ -52,7 +57,7 @@
                     <label for="email" class="form-label">Email du travailleur <span
                             class="text-danger">*</span></label>
                     <input type="email" class="form-control" id="email" name="email"
-                           placeholder="email" required>
+                           placeholder="email" >
                 </div>
 
                 <div class="row">
@@ -60,13 +65,13 @@
                     <!-- Marque -->
                     <div class="mb-3 col-md-6">
                         <label for="marque" class="form-label">Marque <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="marque" name="marque" required>
+                        <input type="text" class="form-control" id="marque" name="marque" >
                     </div>
 
                     <!-- Modèle -->
                     <div class="mb-3 col-md-6">
                         <label for="modele" class="form-label">Modèle <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="modele" name="modele" required>
+                        <input type="text" class="form-control" id="modele" name="modele" >
                     </div>
 
                 </div>
@@ -74,7 +79,7 @@
                 <!-- Plaque -->
                 <div class="mb-3">
                     <label for="plaque" class="form-label">N° de plaque <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="plaque" name="plaque" required>
+                    <input type="text" class="form-control" id="plaque" name="plaque" >
                 </div>
 
                 <div class="row">
@@ -94,7 +99,6 @@
                     </div>
                 </div>
 
-
                 <!-- Date dernier contrôle technique -->
                 <div class="mb-5">
                     <label for="controle_tech" class="form-label">Date dernier contrôle technique</label>
@@ -107,7 +111,7 @@
                             class="text-danger">*</span></label>
                     <div class="dropzone" data-label="certificat_recto">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
-                        <input type="file" name="certificat_recto" id="certificat_recto" required>
+                        <input type="file" name="certificat_recto" id="certificat_recto" >
                     </div>
                 </div>
 
@@ -116,7 +120,7 @@
                             class="text-danger">*</span></label>
                     <div class="dropzone" data-label="certificat_verso">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
-                        <input type="file" name="certificat_verso" id="certificat_verso" required>
+                        <input type="file" name="certificat_verso" id="certificat_verso" >
                     </div>
                 </div>
 
@@ -157,36 +161,36 @@
                             <tr>
                                 <td class="bg-secondary-subtle">Kilométrage</td>
                                 <td><input type="number" class="form-control" name="kilometrage" placeholder="Ex: 45230"
-                                           required></td>
+                                           ></td>
                             </tr>
                             <tr>
                                 <td class="bg-secondary-subtle">Nombre de clefs</td>
                                 <td><input type="number" class="form-control" name="nb_clefs" placeholder="Ex: 2"
-                                           required></td>
+                                           ></td>
                             </tr>
                             <tr>
                                 <td class="bg-secondary-subtle">Code de la carte carburant</td>
                                 <td><input type="text" class="form-control" name="code_carte_carburant"
-                                           placeholder="Ex: 1234-5678-9012" required></td>
+                                           placeholder="Ex: 1234-5678-9012" ></td>
                             </tr>
                             <tr>
                                 <td class="bg-secondary-subtle">Niveau carburant</td>
                                 <td><input type="text" class="form-control" name="niveau_carburant"
-                                           placeholder="Ex: 3/4 plein" required></td>
+                                           placeholder="Ex: 3/4 plein" ></td>
                             </tr>
                             <tr>
                                 <td class="bg-secondary-subtle">Date de validité de l'extincteur</td>
-                                <td><input type="date" class="form-control" name="date_extincteur" required></td>
+                                <td><input type="date" class="form-control" name="date_extincteur" ></td>
                             </tr>
                             <tr>
                                 <td class="bg-secondary-subtle">Lieu de stockage pneus été/hiver</td>
                                 <td><input type="text" class="form-control" name="lieu_stockage_pneus"
-                                           placeholder="Ex: Dépôt 3" required></td>
+                                           placeholder="Ex: Dépôt 3" ></td>
                             </tr>
                             <tr>
                                 <td class="bg-secondary-subtle">N° de châssis</td>
                                 <td><input type="text" class="form-control" name="numero_chassis"
-                                           placeholder="Ex: VF1ABC12345678900" required></td>
+                                           placeholder="Ex: VF1ABC12345678900" ></td>
                             </tr>
                         </tbody>
                     </table>
@@ -284,7 +288,7 @@
 
                 <div class="mb-3">
                     <label for="etatInterieur" class="form-label">État intérieur</label>
-                    <select class="form-select" id="etatInterieur" name="etat_interieur" required>
+                    <select class="form-select" id="etatInterieur" name="etat_interieur" >
                         <option selected disabled>Veuillez sélectionner</option>
                         <option>Bon</option>
                         <option>Moyen</option>
@@ -295,7 +299,7 @@
                 <div class="mb-3">
                     <label for="odeurTabac" class="form-label">Odeur de tabac ?<span
                             class="text-danger">*</span></label>
-                    <select class="form-select" id="odeurTabac" name="odeur_tabac" required>
+                    <select class="form-select" id="odeurTabac" name="odeur_tabac" >
                         <option selected disabled>Veuillez sélectionner</option>
                         <option>Oui</option>
                         <option>Non</option>
@@ -308,7 +312,7 @@
                     <div class="dropzone" data-label="carte_carburant">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
                         <input class="form-control" type="file" name="photo_interieur_avant"
-                               id="photo_interieur_avant" required>
+                               id="photo_interieur_avant" >
                     </div>
                 </div>
 
@@ -318,7 +322,7 @@
                     <div class="dropzone" data-label="carte_carburant">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
                         <input class="form-control" type="file" name="photo_interieur_arriere"
-                               id="photo_interieur_arriere" required>
+                               id="photo_interieur_arriere" >
                     </div>
                 </div>
 
@@ -328,7 +332,7 @@
                     <div class="dropzone" data-label="carte_carburant">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
                         <input class="form-control" type="file" name="photo_interieur_coffre"
-                               id="photo_interieur_coffre" required>
+                               id="photo_interieur_coffre" >
                     </div>
                 </div>
 
@@ -338,8 +342,7 @@
                         lisibles !)<span class="text-danger">*</span></label>
                     <div class="dropzone" data-label="carte_carburant">
                         <p>Déposez un fichier ici ou cliquez pour parcourir</p>
-                        <input class="form-control" type="file" name="photo_compteur_km" id="photo_compteur_km"
-                               required>
+                        <input class="form-control" type="file" name="photo_compteur_km" id="photo_compteur_km">
                     </div>
                 </div>
 
@@ -348,7 +351,7 @@
 
                 <div class="mb-3">
                     <label for="etatExterieur" class="form-label">État extérieur</label>
-                    <select class="form-select" id="etatExterieur" name="etat_exterieur" required>
+                    <select class="form-select" id="etatExterieur" name="etat_exterieur" >
                         <option selected disabled>Veuillez sélectionner</option>
                         <option>Bon</option>
                         <option>Moyen</option>
@@ -362,7 +365,7 @@
                             class="text-danger">*</span></label>
                     <div class="dropzone" data-label="photo_face_avant">
                         <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
-                        <input type="file" name="photo_face_avant" id="photo_face_avant" required
+                        <input type="file" name="photo_face_avant" id="photo_face_avant" 
                                class="form-control">
                     </div>
                 </div>
@@ -372,7 +375,7 @@
                             class="text-danger">*</span></label>
                     <div class="dropzone" data-label="photo_face_arriere">
                         <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
-                        <input type="file" name="photo_face_arriere" id="photo_face_arriere" required
+                        <input type="file" name="photo_face_arriere" id="photo_face_arriere" 
                                class="form-control">
                     </div>
                 </div>
@@ -382,7 +385,7 @@
                             class="text-danger">*</span></label>
                     <div class="dropzone" data-label="photo_cote_droit">
                         <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
-                        <input type="file" name="photo_cote_droit" id="photo_cote_droit" required
+                        <input type="file" name="photo_cote_droit" id="photo_cote_droit" 
                                class="form-control">
                     </div>
                 </div>
@@ -392,7 +395,7 @@
                             class="text-danger">*</span></label>
                     <div class="dropzone" data-label="photo_cote_gauche">
                         <p class="mb-0">Déposez un fichier ici ou cliquez pour parcourir</p>
-                        <input type="file" name="photo_cote_gauche" id="photo_cote_gauche" required
+                        <input type="file" name="photo_cote_gauche" id="photo_cote_gauche" 
                                class="form-control">
                     </div>
                 </div>
@@ -405,7 +408,7 @@
 
                 <!--toolbar-->
 
-                <div class="d-flex align-items-center justify-content-between bg-light p-2 py-5 w-100 mb-4">
+                <div id="toolbar" class="d-flex align-items-center justify-content-between bg-light p-2 py-5 w-100 mb-4">
                     <!-- Brush / Eraser as Radio Buttons -->
                     <div class="d-flex align-items-center justify-content-lg-between gap-3 w-100 flex-wrap flex-lg-nowrap">
 
@@ -447,13 +450,15 @@
                 <div id="konva-container"></div>
 
                 <!-- Submit -->
-                <div class="row text-center mt-5">
+                <div id="send" class="row text-center mt-5">
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </div>
 
             </form>
         </div>
 
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
         <script type="module" src="/src/main.js"></script>
     </body>
 </html>

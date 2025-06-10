@@ -12,12 +12,20 @@ const formContainer = document.querySelector('#form-container')
 
 const WEBHOOK_URL = 'https://hook.eu2.make.com/pqgynh57p9p1oilg8mwskjoltbm7fx0e'
 
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB en octets
 
 form.addEventListener('submit', async (ev) => {
-    ev.preventDefault()
+    ev.preventDefault();
 
-
-    const formData = new FormData(form)
+    const formData = new FormData(form);
+    
+    // Vérifier la taille des fichiers
+    for (let [key, value] of formData.entries()) {
+        if (value instanceof File && value.size > MAX_FILE_SIZE) {
+            alert(`Le fichier ${value.name} dépasse la limite de 2MB`);
+            return;
+        }
+    }
 
     const doc = new jsPDF({
         orientation: "portrait",
@@ -118,20 +126,41 @@ form.addEventListener('submit', async (ev) => {
     console.log(formDataObject)
 
 
+    // Convertir les fichiers en base64
+    const formDataToSend = new FormData();
+    for (let [key, value] of formData.entries()) {
+        if (value instanceof File) {
+            const base64 = await convertFileToBase64(value);
+            formDataToSend.append(key, base64);
+        } else {
+            formDataToSend.append(key, value);
+        }
+    }
 
-    const sendFormToZapier = async () => {
+    // Ajouter le PDF en base64
+    if (formData.has('pdf')) {
+        const pdfFile = formData.get('pdf');
+        const pdfBase64 = await convertFileToBase64(pdfFile);
+        formDataToSend.append('pdf', pdfFile);
+    }
 
-        pdf.append('content', 'WTF')
-
-        await fetch(WEBHOOK_URL, {
+    const sendFormToMake = async () => {
+        return await fetch(WEBHOOK_URL, {
             method: "POST",
-            body: pdf
+            body: formDataToSend
         });
     };
 
-    const data = await sendFormToZapier()
+    const data = await sendFormToMake();
+    console.log(data);
+});
 
-    console.log(data)
-
-
-})
+// Fonction utilitaire pour convertir un fichier en base64
+function convertFileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}

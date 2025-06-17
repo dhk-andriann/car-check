@@ -2,7 +2,6 @@ import './style.scss'
 import './drag-drop.js'
 import * as KonvaJS from "./konva.js";
 
-'./konva.js'
 import {jsPDF} from "jspdf";
 import "@fontsource/montserrat";
 
